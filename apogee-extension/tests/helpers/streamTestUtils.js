@@ -12,17 +12,3 @@ export function createCollectingPort({ throwOnPost = false } = {}) {
   };
 }
 
-export function withMockPerformanceClock(fn) {
-  const origNow = performance.now;
-  let currentTime = 1000;
-  performance.now = () => currentTime;
-  const advanceClock = (ms) => {
-    currentTime += ms;
-  };
-
-  try {
-    return fn({ advanceClock });
-  } finally {
-    performance.now = origNow;
-  }
-}

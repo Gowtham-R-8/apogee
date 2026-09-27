@@ -8,10 +8,23 @@ import {
   replayStreamToPort,
 } from "../../lib/util/streamState.js";
 import { MAX_STREAM_TEXT_CHARS } from "../../lib/extract/fileLimits.js";
-import {
-  createCollectingPort,
-  withMockPerformanceClock,
-} from "../helpers/streamTestUtils.js";
+import { createCollectingPort } from "../helpers/streamTestUtils.js";
+
+function withMockPerformanceClock(fn) {
+  const origNow = performance.now;
+  let currentTime = 1000;
+  performance.now = () => currentTime;
+  const advanceClock = (ms) => {
+    currentTime += ms;
+  };
+
+  try {
+    return fn({ advanceClock });
+  } finally {
+    performance.now = origNow;
+  }
+}
+
 
 test("createStreamState initializes default fields and merges extra options", () => {
   const state = createStreamState({ extraFlag: true, customId: 123 });
