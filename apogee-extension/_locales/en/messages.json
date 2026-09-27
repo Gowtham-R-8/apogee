@@ -1,5 +1,8 @@
 {
-  "appName": { "message": "Apogee", "description": "Extension name" },
+  "appName": {
+    "message": "Apogee",
+    "description": "Extension name"
+  },
   "appHtmlLang": {
     "message": "en",
     "description": "HTML lang attribute for the popup document"
@@ -8,7 +11,10 @@
     "message": "Apogee home",
     "description": "Home view aria label"
   },
-  "apogeeLogo": { "message": "Apogee Logo", "description": "Logo alt text" },
+  "apogeeLogo": {
+    "message": "Apogee Logo",
+    "description": "Logo alt text"
+  },
   "checking": {
     "message": "Checking...",
     "description": "Status pill while provider status loads"
@@ -44,6 +50,14 @@
   "formatParagraphs": {
     "message": "paragraphs",
     "description": "Paragraphs format option"
+  },
+  "focusKeywordPlaceholder": {
+    "message": "Focus on... (optional)",
+    "description": "Focus keyword input placeholder"
+  },
+  "focusKeywordLabel": {
+    "message": "Optional keyword or topic to focus the summary on",
+    "description": "Focus keyword input accessible label"
   },
   "askApogeeQuestion": {
     "message": "Ask Apogee a question",
@@ -113,12 +127,18 @@
     "message": "Model download progress",
     "description": "Model progress bar aria label"
   },
-  "showLogs": { "message": "Show logs", "description": "Show logs toggle" },
+  "showLogs": {
+    "message": "Show logs",
+    "description": "Show logs toggle"
+  },
   "offscreenLogs": {
     "message": "Offscreen Logs",
     "description": "Debug logs title"
   },
-  "clear": { "message": "Clear", "description": "Clear debug logs button" },
+  "clear": {
+    "message": "Clear",
+    "description": "Clear debug logs button"
+  },
   "logsPrivacyWarning": {
     "message": "These logs may contain details about the page you were viewing. Review before pasting into a public issue.",
     "description": "Debug logs privacy warning"
@@ -155,7 +175,10 @@
     "message": "Resummarize",
     "description": "Resummarize button visible label"
   },
-  "cancel": { "message": "Cancel", "description": "Cancel button" },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
   "suggestedPrompts": {
     "message": "Suggested Prompts",
     "description": "Prompts heading"
@@ -164,12 +187,18 @@
     "message": "Hide prompts",
     "description": "Hide prompts button"
   },
-  "askApogee": { "message": "Ask Apogee", "description": "Chat heading" },
+  "askApogee": {
+    "message": "Ask Apogee",
+    "description": "Chat heading"
+  },
   "copyAnswer": {
     "message": "Copy answer",
     "description": "Copy answer button"
   },
-  "questionTag": { "message": "Question", "description": "Prompts toggle tag" },
+  "questionTag": {
+    "message": "Question",
+    "description": "Prompts toggle tag"
+  },
   "askPlaceholder": {
     "message": "Type here to ask · Enter to send",
     "description": "Question input placeholder"
@@ -178,13 +207,22 @@
     "message": "Ask a question about this page",
     "description": "Question input aria label"
   },
-  "send": { "message": "Send", "description": "Send button label" },
+  "send": {
+    "message": "Send",
+    "description": "Send button label"
+  },
   "settingsTitle": {
     "message": "Settings",
     "description": "Settings view title"
   },
-  "back": { "message": "Back", "description": "Back button label" },
-  "status": { "message": "Status", "description": "Status card title" },
+  "back": {
+    "message": "Back",
+    "description": "Back button label"
+  },
+  "status": {
+    "message": "Status",
+    "description": "Status card title"
+  },
   "aiProvider": {
     "message": "AI Provider",
     "description": "Provider card title"
@@ -209,7 +247,10 @@
     "message": "In-Browser Model",
     "description": "Model list title"
   },
-  "ollamaCard": { "message": "Ollama", "description": "Ollama settings title" },
+  "ollamaCard": {
+    "message": "Ollama",
+    "description": "Ollama settings title"
+  },
   "ollamaUrl": {
     "message": "Ollama URL",
     "description": "Ollama URL field label"
@@ -226,7 +267,10 @@
     "message": "Local LLaMA.cpp URL",
     "description": "llama.cpp URL label"
   },
-  "apiKey": { "message": "API key", "description": "API key field label" },
+  "apiKey": {
+    "message": "API key",
+    "description": "API key field label"
+  },
   "apiKeyHint": {
     "message": "(only if started with --api-key)",
     "description": "API key hint"
@@ -263,7 +307,10 @@
     "message": "Appearance Theme",
     "description": "Theme card title"
   },
-  "themeDark": { "message": "Dark Theme", "description": "Dark theme option" },
+  "themeDark": {
+    "message": "Dark Theme",
+    "description": "Dark theme option"
+  },
   "themeLight": {
     "message": "Light Theme",
     "description": "Light theme option"
@@ -296,7 +343,10 @@
     "message": "Stay fully local (don't contact SponsorBlock)",
     "description": "SponsorBlock off option"
   },
-  "privacy": { "message": "Privacy", "description": "Privacy card title" },
+  "privacy": {
+    "message": "Privacy",
+    "description": "Privacy card title"
+  },
   "saveHistoryOn": {
     "message": "Save summaries & history locally",
     "description": "Save history on option"
@@ -373,7 +423,10 @@
     "message": "Get in touch",
     "description": "Contact button and title"
   },
-  "contribute": { "message": "Contribute", "description": "Contribute button" },
+  "contribute": {
+    "message": "Contribute",
+    "description": "Contribute button"
+  },
   "reportBug": {
     "message": "Report a bug",
     "description": "Report bug button"
@@ -382,7 +435,10 @@
     "message": "Request a feature",
     "description": "Request feature button"
   },
-  "madeWith": { "message": "Made with", "description": "Footer lead text" },
+  "madeWith": {
+    "message": "Made with",
+    "description": "Footer lead text"
+  },
   "madeWithBy": {
     "message": "by darshi1337 and",
     "description": "Footer attribution"
