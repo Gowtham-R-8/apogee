@@ -241,6 +241,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - [chore] Name the language-detect sample-size constant ([c1c2760](https://github.com/darshi1337/apogee/commit/c1c2760d1e648dcf8c08e35602f45b2cff9bf55f))
 - [test] Reuse createCollectingPort in attachToStream.test.js ([628fddd](https://github.com/darshi1337/apogee/commit/628fddd4a80d7bf6f192b1cb775700105c5dbb57))
 - [bug] Skip empty chunk broadcast at text cap ([c45e699](https://github.com/darshi1337/apogee/commit/c45e699833e94bce3b0dfd3baed822021f39e5fa))
+- Translate focus keyword input (#348) ([390dc22](https://github.com/darshi1337/apogee/commit/390dc227bc4687a6d71df543b966ee58d21d175a))
 
 ## [0.2.1] - 2026-08-19
 
