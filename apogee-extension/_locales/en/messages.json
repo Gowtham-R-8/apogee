@@ -45,6 +45,14 @@
     "message": "paragraphs",
     "description": "Paragraphs format option"
   },
+  "focusKeywordPlaceholder": {
+    "message": "Focus on... (optional)",
+    "description": "Focus keyword input placeholder"
+  },
+  "focusKeywordLabel": {
+    "message": "Optional keyword or topic to focus the summary on",
+    "description": "Focus keyword input accessible label"
+  },
   "askApogeeQuestion": {
     "message": "Ask Apogee a question",
     "description": "Ask entry button"
