@@ -48,30 +48,3 @@ export function makeCannedChat(outputs) {
   }
   return { fn, calls };
 }
-
-export function withMockPerformanceClock(fn) {
-  const origNow = performance.now;
-  let currentTime = 1000;
-  performance.now = () => currentTime;
-  const advanceClock = (ms) => {
-    currentTime += ms;
-  };
-  const restoreClock = () => {
-    performance.now = origNow;
-  };
-
-  let result;
-  try {
-    result = fn({ advanceClock });
-  } catch (err) {
-    restoreClock();
-    throw err;
-  }
-  // Keep the mock clock installed until async test bodies settle; otherwise
-  // the real clock leaks into post-await assertions.
-  if (result && typeof result.then === "function") {
-    return result.finally(restoreClock);
-  }
-  restoreClock();
-  return result;
-}

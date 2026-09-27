@@ -9,10 +9,34 @@ import {
   replayStreamToPort,
 } from "../../lib/util/streamState.js";
 import { MAX_STREAM_TEXT_CHARS } from "../../lib/extract/fileLimits.js";
-import {
-  createCollectingPort,
-  withMockPerformanceClock,
-} from "../helpers/streamTestUtils.js";
+import { createCollectingPort } from "../helpers/streamTestUtils.js";
+
+function withMockPerformanceClock(fn) {
+  const origNow = performance.now;
+  let currentTime = 1000;
+  performance.now = () => currentTime;
+  const advanceClock = (ms) => {
+    currentTime += ms;
+  };
+  const restoreClock = () => {
+    performance.now = origNow;
+  };
+
+  let result;
+  try {
+    result = fn({ advanceClock });
+  } catch (err) {
+    restoreClock();
+    throw err;
+  }
+  // Keep the mock clock installed until async test bodies settle; otherwise
+  // the real clock leaks into post-await assertions.
+  if (result && typeof result.then === "function") {
+    return result.finally(restoreClock);
+  }
+  restoreClock();
+  return result;
+}
 
 test("createStreamState initializes default fields and merges extra options", () => {
   const state = createStreamState({ extraFlag: true, customId: 123 });
