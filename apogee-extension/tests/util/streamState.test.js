@@ -38,7 +38,6 @@ function withMockPerformanceClock(fn) {
   return result;
 }
 
-
 test("createStreamState initializes default fields and merges extra options", () => {
   const state = createStreamState({ extraFlag: true, customId: 123 });
   assert.strictEqual(state.text, "");
