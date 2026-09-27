@@ -236,6 +236,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Byte-aware storage eviction and atomic past-summary delete ([4a62ecc](https://github.com/darshi1337/apogee/commit/4a62ecc5321f1bba94f27e06fb852d10990a76ad))
 - Sliding stream expiry so long summaries survive cleanup ([c2ad363](https://github.com/darshi1337/apogee/commit/c2ad363c6a3be137c9e3dcd351d5448983a70df1))
+- [docs] Clarify broad host permission wording ([21032ac](https://github.com/darshi1337/apogee/commit/21032acda0ca57ec31705b270479c4ff1f47d5c8))
+- [chore] Prefix debugLog output with [apogee] ([1962a41](https://github.com/darshi1337/apogee/commit/1962a41bd4a05c2150c66200b019dc054426fce4))
+- [chore] Name the language-detect sample-size constant ([c1c2760](https://github.com/darshi1337/apogee/commit/c1c2760d1e648dcf8c08e35602f45b2cff9bf55f))
+- [test] Reuse createCollectingPort in attachToStream.test.js ([628fddd](https://github.com/darshi1337/apogee/commit/628fddd4a80d7bf6f192b1cb775700105c5dbb57))
+- [bug] Skip empty chunk broadcast at text cap ([c45e699](https://github.com/darshi1337/apogee/commit/c45e699833e94bce3b0dfd3baed822021f39e5fa))
 
 ## [0.2.1] - 2026-08-19
 
