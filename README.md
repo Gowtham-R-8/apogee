@@ -170,6 +170,6 @@ See the [extractor test harness and worked examples](apogee-extension/tests/extr
 
 - **[Code of Conduct](CODE_OF_CONDUCT.md)**: Community standards and guidelines.
 
-## License
+## License 2.1
 
 [MIT](LICENSE)
