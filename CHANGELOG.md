@@ -242,6 +242,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - [test] Reuse createCollectingPort in attachToStream.test.js ([628fddd](https://github.com/darshi1337/apogee/commit/628fddd4a80d7bf6f192b1cb775700105c5dbb57))
 - [bug] Skip empty chunk broadcast at text cap ([c45e699](https://github.com/darshi1337/apogee/commit/c45e699833e94bce3b0dfd3baed822021f39e5fa))
 - Translate focus keyword input (#348) ([390dc22](https://github.com/darshi1337/apogee/commit/390dc227bc4687a6d71df543b966ee58d21d175a))
+- Trap dialog focus and throttle announcer (#315) ([4ddbc31](https://github.com/darshi1337/apogee/commit/4ddbc319af73afd52a00cf92926593f177bccccd))
+- Trap dialog focus and throttle announcer (#315) (#375) ([d14c917](https://github.com/darshi1337/apogee/commit/d14c9172168e8e70b45af2c91c82679840280161))
 
 ## [0.2.1] - 2026-08-19
 
