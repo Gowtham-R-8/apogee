@@ -102,6 +102,7 @@ import {
 import { applyI18nToDom } from "../lib/util/i18n.js";
 import { safeDisconnect } from "../lib/util/streamBroadcast.js";
 import { tryParseUrl } from "../lib/util/url.js";
+import { createAnnouncer, handleTrapTabKey } from "../lib/util/a11y.js";
 
 async function isSidePanelOpenForTab(tabId) {
   if (!tabId || typeof chrome.runtime?.sendMessage !== "function") return false;
@@ -984,10 +985,16 @@ function setLoadingIndicator(element, label) {
   element.appendChild(wrapper);
 }
 
-function announce(message) {
+const throttledAnnounce = createAnnouncer((message) => {
   if (!a11yAnnouncer) return;
   a11yAnnouncer.textContent = "";
   a11yAnnouncer.textContent = message;
+});
+
+function announce(message) {
+  // Trailing-edge, last-wins with dedup (#315): rapid state changes
+  // collapse to one live-region update instead of chattering.
+  throttledAnnounce(message);
 }
 
 // Markdown rendering (escape-then-allow-list plus a fail-closed sanitizer
@@ -2585,16 +2592,29 @@ document.getElementById("pasteTextBtn")?.addEventListener("click", async () => {
 });
 
 let pasteDialogResolver = null;
+let pasteDialogOpener = null;
 
 function closePasteDialog(value = null) {
+  const wasOpen = !pasteDialog?.classList.contains("hidden");
   pasteDialog?.classList.add("hidden");
   const resolve = pasteDialogResolver;
   pasteDialogResolver = null;
+  // Focus restore (#315): hand focus back to the opener, but only on a
+  // real open -> close transition so stray closes never steal focus.
+  const opener = pasteDialogOpener;
+  pasteDialogOpener = null;
+  if (wasOpen && opener && typeof opener.focus === "function") {
+    const stillConnected =
+      typeof opener.isConnected !== "boolean" || opener.isConnected;
+    if (stillConnected) opener.focus();
+  }
   resolve?.(value);
 }
 
 function requestPasteText() {
   if (!pasteDialog || !pasteDialogInput) return Promise.resolve(null);
+  pasteDialogOpener =
+    document.activeElement instanceof Element ? document.activeElement : null;
   pasteDialogInput.value = "";
   pasteDialog.classList.remove("hidden");
   pasteDialogInput.focus();
@@ -2614,6 +2634,10 @@ pasteDialog?.addEventListener("click", (event) => {
 });
 pasteDialog?.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closePasteDialog();
+  // Focus trap (#315): Tab/Shift+Tab cycles inside the dialog.
+  else if (event.key === "Tab") {
+    handleTrapTabKey(event, pasteDialog, document.activeElement);
+  }
 });
 
 const fileUploadInput = document.getElementById("fileUploadInput");
