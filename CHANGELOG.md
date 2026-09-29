@@ -244,6 +244,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Translate focus keyword input (#348) ([390dc22](https://github.com/darshi1337/apogee/commit/390dc227bc4687a6d71df543b966ee58d21d175a))
 - Trap dialog focus and throttle announcer (#315) ([4ddbc31](https://github.com/darshi1337/apogee/commit/4ddbc319af73afd52a00cf92926593f177bccccd))
 - Trap dialog focus and throttle announcer (#315) (#375) ([d14c917](https://github.com/darshi1337/apogee/commit/d14c9172168e8e70b45af2c91c82679840280161))
+- Bump fast-uri to ^3.1.7 to patch GHSA-58mr-gqgx-xq4g ([c807ca1](https://github.com/darshi1337/apogee/commit/c807ca14c4b6ceb7793e0cbb5c5f04ec4e38ceea))
 
 ## [0.2.1] - 2026-08-19
 
